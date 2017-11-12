@@ -5,12 +5,14 @@ import (
     "encoding/json"
     "net/http"
     "strings"
+    "time"
+    "log"
 )
 
 func main() {
     mw := multiWeatherProvider{
         openWeatherMap{},
-        weatherUnderground{apiKey: ""}
+        weatherUnderground{apiKey: "510c52e98254d6a5"},
     }
 
     http.HandleFunc("/weather/", func(w http.ResponseWriter, r *http.Request) {
